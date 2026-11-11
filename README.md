@@ -1,3 +1,29 @@
+# TechKart
+
+TechKart is a sample electronics store used to teach how to add an AI agent to an existing application.
+
+**Based on [spring-modular-monolith](https://github.com/sivaprasadreddy/spring-modular-monolith) by Siva Prasad Reddy, licensed under Apache 2.0.**
+This fork changes the original as follows:
+
+* Rebranded the storefront from BookStore to TechKart, with prices shown in rupees
+* Replaced the book catalogue with 50 invented electronics products, and added `category` and `brand` columns
+* Product images are placeholder SVG files inside the project
+* Added demo accounts and demo orders (see below)
+
+Java package names (`com.sivalabs.bookstore`) are unchanged on purpose, so updates from the original project can still be merged.
+All brands and products are made up. Any resemblance to real products is unintended.
+
+| Demo account | Password | Role |
+| --- | --- | --- |
+| `karthik@techkart.test` | `karthik123` | Customer, with six sample orders |
+| `priya@techkart.test` | `priya123` | Admin |
+
+These are demo passwords. Remove the accounts before any real deployment.
+
+The original README follows.
+
+---
+
 # spring-modular-monolith
 An e-commerce application following Modular Monolith architecture using [Spring Modulith](https://spring.io/projects/spring-modulith).
 The goal of this application is to demonstrate various features of Spring Modulith with a practical application.

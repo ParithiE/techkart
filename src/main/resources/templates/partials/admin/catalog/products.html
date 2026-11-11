@@ -62,7 +62,7 @@
                        th:text="${product.name}">name</a>
                     <span th:if="${product.deletedAt() != null}" class="badge bg-danger ms-1">Deleted</span>
                 </td>
-                <td class="fw-semibold" style="color:#0d6efd" th:text="${'$' + product.price}">price</td>
+                <td class="fw-semibold" style="color:#0d6efd" th:text="${'₹' + product.price}">price</td>
                 <td class="admin-product-desc text-muted" th:text="${product.description}">description</td>
                 <td>
                     <a th:if="${product.deletedAt() == null}"

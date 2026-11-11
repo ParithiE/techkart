@@ -44,15 +44,15 @@
                 <tbody>
                 <tr>
                     <td class="fw-semibold" th:text="${order.item.name}">name</td>
-                    <td class="text-end text-muted" th:text="${'$' + order.item.price}">price</td>
+                    <td class="text-end text-muted" th:text="${'₹' + order.item.price}">price</td>
                     <td class="text-center" th:text="${order.item.quantity}">quantity</td>
-                    <td class="text-end fw-semibold" th:text="${'$' + order.item.quantity * order.item.price}">subtotal</td>
+                    <td class="text-end fw-semibold" th:text="${'₹' + order.item.quantity * order.item.price}">subtotal</td>
                 </tr>
                 </tbody>
                 <tfoot>
                 <tr class="cart-total-row">
                     <td colspan="3" class="text-end text-muted">Order Total</td>
-                    <td class="text-end cart-total-amount" th:text="${'$' + order.totalAmount}">totalAmount</td>
+                    <td class="text-end cart-total-amount" th:text="${'₹' + order.totalAmount}">totalAmount</td>
                 </tr>
                 </tfoot>
             </table>

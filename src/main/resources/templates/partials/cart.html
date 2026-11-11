@@ -22,7 +22,7 @@
             <tbody>
             <tr>
                 <td class="cart-product-name fw-semibold">[[${cart.item.name}]]</td>
-                <td class="text-end text-muted">$[[${cart.item.price}]]</td>
+                <td class="text-end text-muted">₹[[${cart.item.price}]]</td>
                 <td class="text-center">
                     <form th:action="@{/update-cart}" th:method="post">
                         <input type="hidden" name="code" th:value="${cart.item.code}"/>
@@ -36,13 +36,13 @@
                         />
                     </form>
                 </td>
-                <td class="text-end fw-semibold">$[[${cart.item.quantity * cart.item.price}]]</td>
+                <td class="text-end fw-semibold">₹[[${cart.item.quantity * cart.item.price}]]</td>
             </tr>
             </tbody>
             <tfoot>
             <tr class="cart-total-row">
                 <td colspan="3" class="text-end text-muted">Order Total</td>
-                <td class="text-end cart-total-amount">$[[${cart.totalAmount}]]</td>
+                <td class="text-end cart-total-amount">₹[[${cart.totalAmount}]]</td>
             </tr>
             </tfoot>
         </table>
