@@ -29,6 +29,7 @@
         <spotless.version>3.11.0</spotless.version>
         <palantir-java-format.version>2.103.0</palantir-java-format.version>
         <error_prone.version>2.51.0</error_prone.version>
+        <spring-ai.version>2.0.2</spring-ai.version>
         <nullaway.version>0.14.3</nullaway.version>
         <archunit.version>1.5.1</archunit.version>
         <argLine/>
@@ -40,6 +41,13 @@
                 <groupId>org.springframework.modulith</groupId>
                 <artifactId>spring-modulith-bom</artifactId>
                 <version>${spring-modulith.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -77,6 +85,11 @@
             <groupId>net.ttddyy.observation</groupId>
             <artifactId>datasource-micrometer-spring-boot</artifactId>
             <version>${datasource-micrometer-spring-boot.version}</version>
+        </dependency>
+        <!-- AI assistant: the provider starter. Swap this one dependency to change provider. -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-model-openai</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

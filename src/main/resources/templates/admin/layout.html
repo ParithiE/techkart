@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/webjars/font-awesome/css/all.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/assistant.css">
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 </head>
 <body class="admin-body">
 
@@ -83,5 +86,6 @@
 <script src="/webjars/htmx.org/dist/htmx.min.js"></script>
 <div layout:fragment="pageScripts">
 </div>
+<script src="/js/assistant.js" sec:authorize="isAuthenticated()"></script>
 </body>
 </html>

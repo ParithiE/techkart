@@ -1,9 +1,11 @@
 package com.sivalabs.bookstore.orders;
 
+import com.sivalabs.bookstore.orders.domain.OrderNotFoundException;
 import com.sivalabs.bookstore.orders.domain.OrderService;
 import com.sivalabs.bookstore.orders.domain.models.CreateOrderCmd;
 import com.sivalabs.bookstore.orders.domain.models.CreateOrderResult;
 import com.sivalabs.bookstore.orders.domain.models.OrderDto;
+import com.sivalabs.bookstore.orders.domain.models.OrderStatus;
 import com.sivalabs.bookstore.orders.domain.models.OrderView;
 import java.util.List;
 import java.util.Optional;
@@ -27,5 +29,13 @@ public class OrdersApi {
 
     public List<OrderView> findOrders(Long userId) {
         return orderService.findOrders(userId);
+    }
+
+    /** Cancels an order, only if it belongs to this user and its status still allows cancelling. */
+    public void cancelOrder(String orderNumber, Long userId) {
+        orderService
+                .findOrder(orderNumber, userId)
+                .orElseThrow(() -> OrderNotFoundException.forOrderNumber(orderNumber));
+        orderService.updateOrderStatus(orderNumber, OrderStatus.CANCELLED);
     }
 }
